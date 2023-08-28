@@ -1,7 +1,62 @@
 @use '../../style' as s;
 
-main {
-	background: s.color(dark);
-	color: s.color(light);
-	padding: s.space(4);
-} 
+.main {
+  display: grid;
+  gap: 20px;
+
+  .post-list {
+    display: grid;
+    gap: 12px;
+
+    .post {
+      display: grid;
+      gap: 8px;
+      border-radius: 10px;
+      padding: 12px;
+      background-color: #f7f7f7;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+
+        .category-list {
+          display: flex;
+          gap: 8px;
+
+          .category {
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 100px;
+            padding: 8px 12px;
+          }
+
+          .important {
+            background-color: #f7e9e1;
+            color: #f46f17;
+          }
+
+          .new {
+            background-color: #f6e8ef;
+            color: #ef5da8;
+          }
+        }
+
+        .date {
+          color: #888888;
+          font-size: 14px;
+        }
+      }
+
+      .message {
+        font-weight: 500;
+        line-height: 150%;
+      }
+    }
+
+    .post-viewed {
+      background-color: transparent;
+      border: 1px solid #e6e6e6;
+    }
+  }
+}

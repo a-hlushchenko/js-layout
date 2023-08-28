@@ -1,0 +1,71 @@
+@use '../../style' as s;
+@use '../../style/layout' as layout;
+
+.tab-list {
+  display: flex;
+  width: 100%;
+
+  .tab {
+    padding-bottom: 14px;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    color: #888888;
+    transition: color 0.3s, width 0.3s;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      height: 2px;
+      width: 0px;
+      background-color: #121212;
+      transition: width 0.3s;
+    }
+  }
+
+  .tab-line-left::after {
+    right: 0px;
+  }
+
+  .tab-line-right::after {
+    left: 0px;
+  }
+
+  .active {
+    color: #121212;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.main {
+  display: grid;
+  gap: 20px;
+
+  .img {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 150%;
+    color: #363636;
+  }
+
+  .button {
+    background-color: #f46f17;
+    border-radius: 10px;
+    padding: 16px;
+    color: #fff;
+    font-weight: 500;
+  }
+}
